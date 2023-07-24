@@ -1,10 +1,21 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @user %>
-
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <% if current_user && [1, @user.id].include?(current_user.id) %>
+    <span style="display:flex">
+      <%= link_to "Edit this user", edit_user_path(@user) %>
+      <span style="margin:0 5px">|</span>
+      <%= button_to "Destroy this user", @user, method: :delete %>
+    </span>
+  <% end %>
   <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>
+<h2>Articles</h2>
+<div id="articles">
+  <% @user.articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+  <% end %>
 </div>

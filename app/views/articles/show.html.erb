@@ -1,0 +1,11 @@
+<%= render @article %>
+<% if current_user && [1, @article.user.id].include?(current_user.id) %>
+  <ul>
+    <li><%= link_to "Edit", edit_article_path(@article) %></li>
+    <li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  </ul>
+<% end %>
+<%= link_to "Back to articles", articles_path %>
