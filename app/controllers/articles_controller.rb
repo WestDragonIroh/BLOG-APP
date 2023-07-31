@@ -6,7 +6,9 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+  end
 
   def new
     @article = Article.new
@@ -50,7 +52,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :status)
   end
 
   def current_user_available
