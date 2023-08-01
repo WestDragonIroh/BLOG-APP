@@ -37,6 +37,6 @@ owns. This project takes reference from the
 
 <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="ruby" width="40" height="40"/>
-</a><a href="https://rspec.info/" target="_blank" rel="noreferrer">
+</a><a href="https://rubyonrails.org/" target="_blank" rel="noreferrer">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-plain.svg" alt="rails" width="40" height="40"/>
 </a></p>
