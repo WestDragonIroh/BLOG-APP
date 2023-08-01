@@ -4,7 +4,6 @@
     <%= form.label :body %><br>
     <%= form.text_area :body %>
     <% @comment.errors.full_messages_for(:body).each do |message| %>
-      <%p @article.errors, "E" %>
       <div><%= message %></div>
     <% end %>
   </p>

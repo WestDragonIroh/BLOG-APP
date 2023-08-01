@@ -7,15 +7,13 @@ class CommentsController < ApplicationController
 
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.new(comment_params)
+    @comment = Comment.new(comment_params)
+    @comment.article_id = @article.id
     @comment.user_id = current_user.id
     if @comment.save
       redirect_to article_path(@article)
     else
-      p @article.errors
-      p @comment.errors
-      flash[:notice] = 'Body cannot be empty'
-      render @article, status: :unprocessable_entity
+      render 'articles/show', status: :unprocessable_entity
     end
   end
 
